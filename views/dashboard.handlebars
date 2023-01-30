@@ -1,0 +1,17 @@
+{{> navbar}}
+
+{{#if logged_in}}
+<div>
+  <h1>Welcome {{name}}</h1>
+</div>
+{{/if}}
+
+{{> postarray }}
+<div>
+  <button class="b-2 btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" id="new-post">+ New Post</button>
+</div>
+
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
