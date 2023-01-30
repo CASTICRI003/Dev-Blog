@@ -31,7 +31,7 @@ router.get('/post/:id', async (req, res) => {
                 attributes: [
                     'id',
                     'comment_text',
-                    'post_idd',
+                    'post_id',
                     'user_id',
                 ],
                 include: {
