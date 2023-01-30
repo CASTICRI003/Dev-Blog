@@ -25,6 +25,13 @@ User.init(
             allowNull: false,
             unique: true,
             validate: {
+                isEmail: true,
+            },
+          },
+          password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { 
                 len: [8],
             },
           },
@@ -33,7 +40,7 @@ User.init(
         hooks: {
             beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10, function(err, hash) {
-                    
+
                 });
                 return newUserData;
             },
