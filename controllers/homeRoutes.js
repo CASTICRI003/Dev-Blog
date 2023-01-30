@@ -51,3 +51,20 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.secure.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Post, Comment }],
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render('dashboard', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
