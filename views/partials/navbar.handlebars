@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e49733;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+                {{#if logged_in}}
+                <a class="nav-link" id="logout" href="/">Logout</a>
+                {{else}}
+                <a class="nav-link" href="/login">Login</a>
+                {{/if}}
+            </div>
+        </div>
+        <h1 class="text-center mb" style="background-color: #e49733;">Developer Blog</h1>
+    </div>
+</nav>

@@ -1,0 +1,12 @@
+{{#each comment}}
+
+ <div class="card">
+    <div class="card-body">
+      <h2 class="card-title" id="{{comment.id}}"></h2>
+      <p class="card-text">
+        {{comment_text}}
+      </p>
+      <p>- {{name}} {{format_date createdAt}}</p>
+    </div>
+  </div>
+  {{/each}}

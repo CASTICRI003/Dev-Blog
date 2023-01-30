@@ -1,0 +1,11 @@
+{{> navbar}}
+<div class="card">
+  <div class="card-body">
+    <h2 class="card-title" id="{{post.id}}">{{post.title}}</h2>
+    <p class="card-text">
+      {{post.content}}
+    </p>
+    <p>Posted by {{post.name}} on {{format_date post.post_date}}</p>
+  </div>
+{{> comment }}
+</div>
